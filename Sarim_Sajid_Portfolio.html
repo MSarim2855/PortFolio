@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sarim Sajid — Portfolio</title>
+<style>
+:root{--bg:#030406;--fg:#eceae4;--mut:#b3b8c4;--gold:#35e4d6;--teal:#7af7ee;--card:rgba(6,10,14,.62);--line:rgba(255,255,255,.1);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:radial-gradient(ellipse at 70% 10%,#0a2230 0%,#05060a 45%,#020203 100%) fixed;color:var(--fg);font:16px/1.65 'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:0;width:100%;height:100%}
+main,nav{position:relative;z-index:2}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:linear-gradient(var(--bg),transparent);z-index:5}
+nav b{letter-spacing:.2em;font-size:.8rem;color:var(--gold)}nav div{display:flex;gap:22px;font-size:.85rem}
+nav a{color:var(--mut);text-decoration:none;transition:.3s}nav a:hover{color:var(--fg)}
+@media(max-width:700px){nav div a:nth-child(n+4){display:none}}
+section{min-height:100vh;padding:110px 6vw 60px;max-width:1200px;margin:auto}
+#hero{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
+.tag{color:var(--gold);letter-spacing:.3em;font-size:.78rem;text-transform:uppercase}
+h1{font-size:clamp(3rem,9vw,7.5rem);line-height:.95;font-weight:800;letter-spacing:-.04em;margin:18px 0;background:linear-gradient(100deg,#fff 20%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:560px;color:var(--mut);font-size:1.15rem}
+.btns{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:99px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:600;transition:.3s}
+.btn.f,.btn:hover{background:var(--gold);color:#111}
+h2{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em;margin:8px 0 38px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;backdrop-filter:blur(14px)}
+.stat b{display:block;font-size:2.6rem;color:var(--gold);line-height:1.1}.stat span{color:var(--mut);font-size:.88rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;perspective:1000px}
+.tilt{transition:transform .15s,border-color .3s;transform-style:preserve-3d;will-change:transform}
+.tilt:hover{border-color:var(--gold)}.tilt h3{font-size:1.35rem;margin:6px 0 10px;transform:translateZ(30px)}
+.tilt p,.card li{color:var(--mut);font-size:.95rem}.card ul{padding-left:18px;margin-top:10px}
+.pill{display:inline-block;font-size:.72rem;padding:3px 11px;border-radius:99px;background:rgba(53,228,214,.13);color:var(--gold);margin:12px 6px 0 0}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.bars{display:grid;gap:18px;margin-top:10px}
+.bar{display:grid;grid-template-columns:130px 1fr 90px;gap:14px;align-items:center;font-size:.9rem}
+.tr{height:10px;border-radius:9px;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+.tr i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;width:0;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.tr .a{background:linear-gradient(90deg,var(--teal),#8af0d3)}.tr .b{background:#e0615a;z-index:2;transition-delay:.2s}
+.bar em{font-style:normal;color:var(--mut);text-align:right}
+.tl{border-left:1px solid var(--line);padding-left:26px;display:grid;gap:26px}
+.tl div{position:relative}.tl div:before{content:"";position:absolute;left:-32px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+.tl b{display:block}.tl span{color:var(--mut);font-size:.92rem}
+footer{text-align:center;padding:70px 5vw 90px;color:var(--mut)}
+@media(max-width:600px){.bar{grid-template-columns:1fr}.bar em{text-align:left}}
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:rgba(3,4,6,.5)}.media{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:18px}.slot{aspect-ratio:16/9;border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.68rem;color:var(--mut);text-align:center;padding:4px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.tb{font:inherit;font-size:.9rem;padding:10px 20px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;transition:.3s}.tb:hover{color:var(--fg)}.tb.on{background:var(--gold);color:#071014;border-color:var(--gold);font-weight:600}.pnl{display:none}.pnl.on{display:block;animation:pin .6s ease}@keyframes pin{from{opacity:0;transform:translateY(14px)}}.pnl .media{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:22px}.pnl ul{margin:14px 0}.slot.ok{border:1px solid var(--line);padding:0;overflow:hidden;background:#000}.slot img,.slot video{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}.slot video{object-fit:contain;cursor:auto}#lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;cursor:zoom-out}#lb.on{display:flex}#lb img{max-width:92vw;max-height:90vh;border-radius:10px}.aur{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}.aur i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.22;animation:fl 50s ease-in-out infinite alternate}.aur i:nth-child(1){width:46vw;height:46vw;background:#0fb5c4;top:-12vw;left:-8vw}.aur i:nth-child(2){width:38vw;height:38vw;background:#2a62ff;bottom:-10vw;right:-6vw;animation-duration:70s}.aur i:nth-child(3){width:30vw;height:30vw;background:#35e4d6;top:35vh;left:40vw;opacity:.18;animation-duration:90s}@keyframes fl{to{transform:translate(12vw,-8vh) scale(1.25)}}#live{display:none;position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}@media(prefers-reduced-motion:reduce){.aur i{animation:none}}
+</style></head><body>
+<div class="aur"><i></i><i></i><i></i></div><canvas id="live"></canvas><canvas id="bg"></canvas><div id="lb"><img alt=""></div>
+<nav><b>SARIM SAJID</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#chess">Chess</a><a href="#impact">Impact</a><a href="#research">Research</a><a href="#contact">Contact</a></div></nav>
+<main>
+<section id="hero"><div class="tag">Lahore, Pakistan · O-Level Student</div>
+<h1>Sarim<br>Sajid</h1>
+<p class="lead">Chess player, software builder and community leader. I build tools that make hard things easier to learn: for chess students, for athletes, and for people new to the digital world.</p>
+<div class="btns"><a class="btn f" href="#projects">View my work</a><a class="btn" href="https://digiital-bridge.github.io/Digital-Illiteracy/index.html" target="_blank" rel="noopener">Digital Bridge ↗</a><a class="btn" href="#contact">Get in touch</a></div></section>
+
+<section id="about"><div class="tag rv">At a glance</div><h2 class="rv">The numbers.</h2>
+<div class="stats rv">
+<div class="stat"><b data-n="1634">0</b><span>Initial FIDE rating</span></div>
+<div class="stat"><b data-n="100" data-p="Top ">0</b><span>Pakistan U18 ranking</span></div>
+<div class="stat"><b data-n="4">0</b><span>Software projects built</span></div>
+<div class="stat"><b data-n="74">0</b><span>In-person surveys led</span></div>
+<div class="stat"><b data-n="200" data-s="+">0</b><span>Online survey responses</span></div>
+</div>
+<div class="grid" style="margin-top:22px">
+<div class="card rv"><h3>Education</h3><ul><li>Final year of O-Levels</li><li>Pakistan Studies: A*</li><li>Islamiyat: A*</li><li>Global Perspectives (extra subject): A</li></ul></div>
+<div class="card rv"><h3>Skills</h3><ul><li>Python, desktop apps, web development</li><li>Research, survey design, interviews</li><li>Team leadership and workshop delivery</li><li>Chess analysis and strategic thinking</li></ul></div></div></section>
+
+<section id="projects"><div class="tag rv">Selected work</div><h2 class="rv">Things I’ve built.</h2>
+<div class="tabs rv"><button class="tb on" data-t="0">Sai Training Studio</button><button class="tb" data-t="1">Chess Learning App</button><button class="tb" data-t="3">Vault</button><button class="tb" data-t="2">Digital Bridge</button></div><div class="rv"><div class="card pnl" data-p="1"><div class="tag">02 · Desktop app</div><h3 style="font-size:1.7rem;margin:6px 0 12px">Chess Learning &amp; Analysis App</h3><p style="color:var(--mut);max-width:720px">A study tool that turns chess books into interactive lessons. Instead of retyping moves from a PDF, you click a variation and it appears on the board, ready to analyse.</p><ul><li>Analyse any position with the engine of your choice</li><li>Open chess PDFs and read them inside the app</li><li>Select a variation in the text and it loads onto the board automatically</li></ul><div><span class="pill">Python</span><span class="pill">PyQt6</span><span class="pill">UCI engines</span><span class="pill">PDF reader</span></div><div class="media"><div class="slot" data-m="chess-1"></div><div class="slot" data-m="chess-2"></div><div class="slot" data-m="chess-demo"></div></div></div><div class="card pnl on" data-p="0"><div class="tag">01 · Desktop app</div><h3 style="font-size:1.7rem;margin:6px 0 12px">Sai Training Studio</h3><p style="color:var(--mut);max-width:720px">A personal-trainer app that tracks workouts and gives daily feedback, with an AI assistant built in.</p><ul><li>Workout logging and exercise history</li><li>Progress calendar and daily feedback</li><li>Exercise timer, music player and photo albums</li><li>Built-in AI assistant</li></ul><div><span class="pill">Python</span><span class="pill">Embedded HTML UI</span><span class="pill">AI assistant</span></div><div class="media"><div class="slot" data-m="sai-1"></div><div class="slot" data-m="sai-2"></div><div class="slot" data-m="sai-demo"></div></div></div><div class="card pnl" data-p="3"><div class="tag">03 · Desktop app</div><h3 style="font-size:1.7rem;margin:6px 0 12px">Vault: Money Tracker</h3><p style="color:var(--mut);max-width:720px">A personal finance app that keeps track of money coming in and going out. A login screen protects it, and every transaction is saved and can be searched later.</p><ul><li>Password-protected login screen before the dashboard opens</li><li>Record deposits and spending, with a required reason for every expense</li><li>Searchable transaction history, filterable by deposits or spending</li><li>All data stored locally in a SQLite database</li></ul><div><span class="pill">Python</span><span class="pill">Tkinter</span><span class="pill">SQLite</span><span class="pill">Pillow</span></div><div class="media"><div class="slot" data-m="vault-1"></div><div class="slot" data-m="vault-2"></div></div></div><div class="card pnl" data-p="2"><div class="tag">04 · Website</div><h3 style="font-size:1.7rem;margin:6px 0 12px">Digital Bridge</h3><p style="color:var(--mut);max-width:720px">The website for our community digital-literacy project. It brings together the research, survey data, expert interviews, workshop evidence and measured results in one place.</p><ul><li>Secondary research: causes, consequences, global, national and local views</li><li>Primary research: survey results and three expert interviews</li><li>Workshop evidence and before/after impact charts</li></ul><div><span class="pill">HTML/CSS/JS</span><span class="pill">Data visualisation</span></div><a class="btn" style="display:inline-block;margin-top:16px;padding:8px 18px;font-size:.85rem" href="https://digiital-bridge.github.io/Digital-Illiteracy/index.html" target="_blank" rel="noopener">Visit site ↗</a><div class="media"><div class="slot" data-m="bridge-1"></div><div class="slot" data-m="bridge-2"></div><div class="slot" data-m="bridge-3"></div></div></div></div></section>
+
+<section id="chess"><div class="tag rv">Competitive chess</div><h2 class="rv">Chess record.</h2>
+<div class="tl rv">
+<div><b>FIDE-rated tournaments</b><span>Played 2 FIDE tournaments and earned an initial rating of 1634, placing among Pakistan’s top 100 players under 18.</span></div>
+<div><b>BGTL Intra-House Championship · Grade 9</b><span>1st place</span></div>
+<div><b>BGTL Intra-House Championship · Grade 10</b><span>3rd place</span></div>
+<div><b>BGTL Intra-House Championship · Grade 11</b><span>1st place</span></div></div></section>
+
+<section id="impact"><div class="tag rv">Community project · Team lead</div><h2 class="rv">Digital Bridge.</h2>
+<p class="lead rv" style="margin-bottom:26px">I led a team teaching digital skills to people who were left behind by technology. We researched the problem, surveyed the community, ran workshops, and measured the result.</p>
+<div class="grid" style="margin-bottom:30px">
+<div class="card rv"><h3>Research</h3><ul><li>Causes, consequences, and global, national and local perspectives from recognised sources</li><li>74 in-person surveys plus an online survey with about 200 responses</li><li>Interviews with a Systems International development head, a UVAS IT head and a software engineer</li></ul></div>
+<div class="card rv"><h3>Action</h3><ul><li>Poster campaign and door-to-door outreach to shops and neighbours</li><li>2 hands-on workshops covering WhatsApp, phishing and mobile use</li><li>Surveys at Education University, a public park, UVAS, and among neighbours and family</li><li>Pre and post surveys plus participant feedback</li></ul></div></div>
+<div class="card rv"><h3>Measured impact</h3><p style="color:var(--mut);margin:4px 0 18px;font-size:.9rem">Share of participants able to do each skill, before and after the workshops.</p>
+<div class="bars" id="bars"></div>
+<p style="color:var(--mut);font-size:.85rem;margin-top:18px">Participant feedback: 73% found it very helpful, 80% enjoyed it very much, 80% felt very comfortable.</p></div></section>
+
+<section id="research"><div class="tag rv">Writing</div><h2 class="rv">Research report.</h2>
+<div class="card tilt rv"><h3>“Do human errors contribute to the rise of cybersecurity threats?”</h3><p>A report examining weak passwords, phishing and misconfigured systems as causes of breaches. It covers the financial and reputational consequences, weighs different perspectives, and argues that human ignorance is the most significant cause.</p><span class="pill">Cybersecurity</span><span class="pill">Analysis</span><span class="pill">Report writing</span></div></section>
+
+<section id="contact" style="min-height:70vh"><div class="tag rv">Contact</div><h2 class="rv">Let’s talk.</h2>
+<div class="btns rv"><a class="btn f" href="mailto:Muhammad.sarim2855@gmail.com">Muhammad.sarim2855@gmail.com</a><a class="btn" href="https://digiital-bridge.github.io/Digital-Illiteracy/index.html" target="_blank" rel="noopener">Digital Bridge website ↗</a></div></section>
+<footer>© 2026 Sarim Sajid · Lahore, Pakistan</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var cv=document.getElementById('bg'),W=innerWidth,H=innerHeight,ok=true;
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});}catch(e){ok=false}
+if(ok){
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(W,H);
+var S=new THREE.Scene();S.fog=new THREE.FogExp2(0x030406,.012);
+var C=new THREE.PerspectiveCamera(55,W/H,.1,300);
+var cv2=document.createElement('canvas');cv2.width=cv2.height=64;var cx2=cv2.getContext('2d'),gr=cx2.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.6)');gr.addColorStop(1,'rgba(255,255,255,0)');cx2.fillStyle=gr;cx2.fillRect(0,0,64,64);
+var tex=new THREE.CanvasTexture(cv2);
+var N=W<700?14000:36000,P=new Float32Array(N*3),K=new Float32Array(N*3),R0=15,A=4,c1=new THREE.Color(0xd8fffb),c2=new THREE.Color(0x35e4d6),c3=new THREE.Color(0x2a62ff),c4=new THREE.Color(0x8a5cff),col=new THREE.Color();
+for(var i=0;i<N;i++){var rr=Math.pow(Math.random(),1.5)*R0,an=rr*.55+(i%A)*(6.2832/A);
+var sp=.25+rr*.07,rx=Math.pow(Math.random(),3)*(Math.random()<.5?1:-1)*sp*2,rz=Math.pow(Math.random(),3)*(Math.random()<.5?1:-1)*sp*2,ry=Math.pow(Math.random(),3)*(Math.random()<.5?1:-1)*sp*.6;
+P[i*3]=Math.cos(an)*rr+rx;P[i*3+1]=ry*(1.2-rr/R0);P[i*3+2]=Math.sin(an)*rr+rz;
+var f=rr/R0;if(f<.35)col.copy(c1).lerp(c2,f/.35);else if(f<.75)col.copy(c2).lerp(c3,(f-.35)/.4);else col.copy(c3).lerp(c4,(f-.75)/.25*Math.random());
+K[i*3]=col.r;K[i*3+1]=col.g;K[i*3+2]=col.b}
+var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(P,3));g.setAttribute('color',new THREE.BufferAttribute(K,3));
+var gal=new THREE.Points(g,new THREE.PointsMaterial({size:.16,map:tex,vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.4}));
+var G=new THREE.Group();G.add(gal);
+var core=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,color:0x6ff3ea,blending:THREE.AdditiveBlending,transparent:true,opacity:.2,depthWrite:false}));core.scale.set(9,9,1);G.add(core);S.add(G);
+var SN=2500,SP=new Float32Array(SN*3);for(var i=0;i<SN;i++){var u=Math.random()*6.283,v=Math.acos(2*Math.random()-1),d=70+Math.random()*80;SP[i*3]=d*Math.sin(v)*Math.cos(u);SP[i*3+1]=d*Math.sin(v)*Math.sin(u);SP[i*3+2]=d*Math.cos(v)}
+var sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(SP,3));
+var stars=new THREE.Points(sg,new THREE.PointsMaterial({size:.5,map:tex,color:0x9ffaf2,transparent:true,opacity:.3,blending:THREE.AdditiveBlending,depthWrite:false,fog:false}));S.add(stars);
+var mx=0,my=0,sy=0,cx=0,cy=0;
+addEventListener('mousemove',function(e){mx=e.clientX/W-.5;my=e.clientY/H-.5});
+addEventListener('scroll',function(){sy=scrollY/Math.max(1,document.body.scrollHeight-H)},{passive:true});
+addEventListener('resize',function(){W=innerWidth;H=innerHeight;R.setSize(W,H);C.aspect=W/H;C.updateProjectionMatrix()});
+var t=0;(function loop(){requestAnimationFrame(loop);t+=.003;
+cx+=(mx-cx)*.03;cy+=(my-cy)*.03;
+gal.rotation.y=t*.6;core.material.opacity=.18+Math.sin(t*6)*.03;stars.rotation.y=t*.05;
+G.rotation.x=.75+sy*.6+cy*.12;G.rotation.z=cx*.12-.2;
+G.position.set(W>800?5:0,-1+sy*2,0);
+C.position.set(cx*2,5,24-sy*8);C.lookAt(0,0,0);
+R.render(S,C)})();
+}
+document.querySelectorAll('.tb').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tb,.pnl').forEach(function(e){e.classList.remove('on')});b.classList.add('on');document.querySelector('.pnl[data-p="'+b.dataset.t+'"]').classList.add('on')})});
+(function(){var lb=document.getElementById('lb'),li=lb.querySelector('img');lb.onclick=function(){lb.classList.remove('on')};
+function done(sl){var m=sl.parentNode;if(sl.parentNode&&!sl.classList.contains('ok'))sl.remove();if(m&&!m.children.length)m.remove()}
+document.querySelectorAll('[data-m]').forEach(function(sl){var b=sl.dataset.m;
+if(/-demo$/.test(b)){var v=document.createElement('video');v.controls=true;v.preload='metadata';v.muted=true;v.playsInline=true;v.onloadedmetadata=function(){sl.classList.add('ok');sl.appendChild(v)};v.onerror=function(){done(sl)};v.src=b+'.mp4';return}
+var c=[],ex=['.jpeg','.jpg','.png','.JPG','.JPEG','.PNG'],bs=[b,b.replace(/-(\d)$/,'.-$1')];bs.forEach(function(x){ex.forEach(function(e){c.push(x+e)})});
+(function tr(i){if(i>=c.length){done(sl);return}var im=new Image();im.onload=function(){sl.classList.add('ok');im.onclick=function(){li.src=im.src;lb.classList.add('on')};sl.appendChild(im)};im.onerror=function(){tr(i+1)};im.src=c[i]})(0)})})();
+// reveal + counters + bars
+var data=[['Mobile apps',20,62],['Basic tasks',18,58],['Internet',0,55],['Scam awareness',18,62],['Online payments',0,62],['Saving contacts',55,100],['WhatsApp',50,100],['Wi-Fi / data',15,100]];
+document.getElementById('bars').innerHTML=data.map(function(d){return '<div class="bar"><span>'+d[0]+'</span><div class="tr"><i class="a" data-w="'+d[2]+'"></i><i class="b" data-w="'+d[1]+'"></i></div><em>'+d[1]+'% → <b style="color:var(--teal)">'+d[2]+'%</b></em></div>'}).join('');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;el.classList.add('on');
+el.querySelectorAll('[data-w]').forEach(function(b){b.style.width=b.dataset.w+'%'});
+el.querySelectorAll('[data-n]').forEach(function(n){var T=+n.dataset.n,s=performance.now();(function f(now){var p=Math.min(1,(now-s)/1600);n.textContent=(n.dataset.p||'')+Math.round(T*(1-Math.pow(1-p,3)))+(n.dataset.s||'');if(p<1)requestAnimationFrame(f)})(s)});
+io.unobserve(el)})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+// 3D tilt
+document.querySelectorAll('.tilt').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='rotateY('+x*14+'deg) rotateX('+-y*14+'deg) translateZ(10px)'});c.addEventListener('mouseleave',function(){c.style.transform=''})});
+})();
+(function(){var c=document.getElementById('live'),x=c.getContext('2d'),w,h,P=[],m={x:-999,y:-999},D=Math.min(devicePixelRatio,2);
+function rs(){w=innerWidth;h=innerHeight;c.width=w*D;c.height=h*D;x.setTransform(D,0,0,D,0,0)}rs();addEventListener('resize',rs);
+var N=w<700?45:95;for(var i=0;i<N;i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15});
+addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY});addEventListener('mouseleave',function(){m.x=m.y=-999});
+(function f(){requestAnimationFrame(f);x.clearRect(0,0,w,h);
+for(var i=0;i<N;i++){var p=P[i],dx=m.x-p.x,dy=m.y-p.y,d=Math.sqrt(dx*dx+dy*dy);if(d<180&&d>1){p.vx+=dx/d*.003;p.vy+=dy/d*.003}p.vx*=.99;p.vy*=.99;if(Math.abs(p.vx)<.08)p.vx*=1.05;p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+x.fillStyle='rgba(122,247,238,.7)';x.beginPath();x.arc(p.x,p.y,1.6,0,6.3);x.fill();
+for(var j=i+1;j<N;j++){var q=P[j],a=p.x-q.x,b=p.y-q.y,l=a*a+b*b;if(l<14000){x.strokeStyle='rgba(53,228,214,'+(.22*(1-l/14000))+')';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}}
+})()})();
+</script></body></html>
